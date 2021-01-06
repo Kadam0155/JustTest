@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:eda="http://namespaces.softwareag.com/EDA/Event"
+  xmlns:p="http://namespaces.softwareag.com/EDA/pub/publish"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://namespaces.softwareag.com/EDA/pub/publish" elementFormDefault="qualified">
+  <xs:import namespace="http://namespaces.softwareag.com/EDA/Event" schemaLocation="../../Event/Envelope.xsd"/>
+  <xs:element name="envelope" type="p:envelopeType" substitutionGroup="eda:Payload"/>
+  <xs:complexType name="envelopeType">
+    <xs:sequence>
+      <xs:element name="activation" minOccurs="0" type="xs:string"/>
+      <xs:element name="appLastSeqn" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="appPassword" minOccurs="0" type="xs:string"/>
+      <xs:element name="appSeqn" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="appUserName" minOccurs="0" type="xs:string"/>
+      <xs:element name="priority" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="businessContext" minOccurs="0" type="xs:string"/>
+      <xs:element name="controlLabel" minOccurs="0"
+        maxOccurs="unbounded" type="xs:anyType"/>
+      <xs:element name="errorsTo" minOccurs="0" type="xs:string"/>
+      <xs:element name="errorRequestsTo" minOccurs="0" type="xs:string"/>
+      <xs:element name="locale" minOccurs="0" type="xs:string"/>
+      <xs:element name="maxResults" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="replyTo" minOccurs="0" type="xs:string"/>
+      <xs:element name="runLevel" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="signature" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="signatureType" minOccurs="0" type="xs:string"/>
+      <xs:element name="startResult" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="tag" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="trackId" minOccurs="0" type="xs:string"/>
+      <xs:element name="transactionId" minOccurs="0" type="xs:string"/>
+      <xs:element name="transformState" minOccurs="0" type="xs:string"/>
+      <xs:element name="age" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="connectionIntegrity" minOccurs="0" type="xs:string"/>
+      <xs:element name="destId" minOccurs="0" type="xs:string"/>
+      <xs:element name="enqueueTime" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="logBroker" minOccurs="0" type="xs:string"/>
+      <xs:element name="logHost" minOccurs="0" type="xs:string"/>
+      <xs:element name="pubDistinguishedName" minOccurs="0" type="xs:string"/>
+      <xs:element name="pubId" minOccurs="0" type="xs:string"/>
+      <xs:element name="pubNetAddr" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="pubSeqn" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="pubLabel" minOccurs="0" maxOccurs="unbounded" type="xs:anyType"/>
+      <xs:element name="recvTime" minOccurs="0" type="xs:anyType"/>
+      <xs:element name="route" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="broker" minOccurs="0" type="xs:string"/>
+            <xs:element name="recvTime" minOccurs="0" type="xs:anyType"/>
+            <xs:element name="enqueueTime" minOccurs="0" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="uuid" minOccurs="0" type="xs:string"/>
+      <xs:element name="status" minOccurs="0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
